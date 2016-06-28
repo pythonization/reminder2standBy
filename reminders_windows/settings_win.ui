@@ -1,0 +1,804 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>settingsWin</class>
+ <widget class="QWidget" name="settingsWin">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>513</width>
+    <height>558</height>
+   </rect>
+  </property>
+  <property name="sizeIncrement">
+   <size>
+    <width>0</width>
+    <height>0</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Settings</string>
+  </property>
+  <widget class="QCheckBox" name="mouseCb">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>60</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track mouse</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="keyboardCb">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>10</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track keyboard</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="soundCb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>110</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track sound</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="fullScreenCb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>160</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track full screen windows</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="boringTe">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
+   </property>
+   <property name="minimumTime">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>10</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="boringLb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>241</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time reminder get bored</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="remindTe">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
+   </property>
+   <property name="minimumTime">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>10</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="remindLb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>241</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time to first remind</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="continuouslyLb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>241</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time to continuously remind user</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="continuouslyTe">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>190</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="time">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>10</second>
+    </time>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
+   </property>
+   <property name="minimumTime">
+    <time>
+     <hour>0</hour>
+     <minute>0</minute>
+     <second>10</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="standbyTe">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>260</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>1</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
+   </property>
+   <property name="minimumTime">
+    <time>
+     <hour>0</hour>
+     <minute>1</minute>
+     <second>0</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="standbyLb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>220</y>
+     <width>241</width>
+     <height>34</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time to put system to Stand By</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="cpuCb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>370</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track CPU load</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="CPUprocSb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>435</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="minimum">
+    <number>5</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cpu1Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>415</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load more than</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cpu2Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>76</x>
+     <y>440</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cpu3Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>465</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>during</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="CPUtimeTe">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>485</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>45</minute>
+     <second>59</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>0</hour>
+     <minute>45</minute>
+     <second>59</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="cpu4Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>95</x>
+     <y>490</y>
+     <width>131</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>is activity</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hdd4Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>345</x>
+     <y>490</y>
+     <width>131</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>is activity</string>
+   </property>
+  </widget>
+  <widget class="QSpinBox" name="HDDprocSb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>435</y>
+     <width>60</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="minimum">
+    <number>5</number>
+   </property>
+   <property name="maximum">
+    <number>100</number>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="hddCb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>370</y>
+     <width>241</width>
+     <height>44</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Track HDD load</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hdd1Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>415</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Load more than</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hdd3Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>465</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>during</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="hdd2Lb">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>326</x>
+     <y>440</y>
+     <width>151</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QTimeEdit" name="HDDtimeTe">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>485</y>
+     <width>81</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="buttonSymbols">
+    <enum>QAbstractSpinBox::PlusMinus</enum>
+   </property>
+   <property name="specialValueText">
+    <string/>
+   </property>
+   <property name="accelerated">
+    <bool>true</bool>
+   </property>
+   <property name="maximumDateTime">
+    <datetime>
+     <hour>0</hour>
+     <minute>45</minute>
+     <second>59</second>
+     <year>2000</year>
+     <month>1</month>
+     <day>1</day>
+    </datetime>
+   </property>
+   <property name="maximumTime">
+    <time>
+     <hour>0</hour>
+     <minute>45</minute>
+     <second>59</second>
+    </time>
+   </property>
+   <property name="displayFormat">
+    <string>mm.ss</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="notActiveLb">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>250</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Time not active</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="notActiveOutLb">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>270</y>
+     <width>241</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>0 min 0 s</string>
+   </property>
+  </widget>
+  <widget class="QDialogButtonBox" name="bottomBb">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>520</y>
+     <width>491</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="standardButtons">
+    <set>QDialogButtonBox::Close|QDialogButtonBox::Save</set>
+   </property>
+   <property name="centerButtons">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="autostartCb">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>320</y>
+     <width>241</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="text">
+    <string>Autostart</string>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>boringTe</tabstop>
+  <tabstop>remindTe</tabstop>
+  <tabstop>continuouslyTe</tabstop>
+  <tabstop>standbyTe</tabstop>
+  <tabstop>keyboardCb</tabstop>
+  <tabstop>mouseCb</tabstop>
+  <tabstop>soundCb</tabstop>
+  <tabstop>fullScreenCb</tabstop>
+  <tabstop>cpuCb</tabstop>
+  <tabstop>autostartCb</tabstop>
+  <tabstop>CPUprocSb</tabstop>
+  <tabstop>CPUtimeTe</tabstop>
+  <tabstop>hddCb</tabstop>
+  <tabstop>HDDprocSb</tabstop>
+  <tabstop>HDDtimeTe</tabstop>
+  <tabstop>bottomBb</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>

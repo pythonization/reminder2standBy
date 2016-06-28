@@ -1,0 +1,11 @@
+[timings]
+remind1 = 300
+bored = 180
+put_stand_by = 900
+continuously = 600
+
+[track]
+sound = False
+mouse = True
+keyboard = True
+

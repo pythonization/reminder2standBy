@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Name=Reminder to Stand By
+Icon=/media/data/vetalstar/Dokumenti/programmirovanije/zmeja/reminder2standBy/resources/moonOnBlue256.png
+Path=/media/data/vetalstar/Dokumenti/programmirovanije/zmeja/reminder2standBy
+Exec=/usr/bin/python3 -u /media/data/vetalstar/Dokumenti/programmirovanije/zmeja/reminder2standBy/reminder2standBy.py
+StartupNotify=false
+StartupWMClass=Reminder2standBy.py
+OnlyShowIn=Unity;
+X-UnityGenerated=true
