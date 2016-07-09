@@ -47,13 +47,12 @@ if __name__ == '__main__':
         app.exec()  # running app
     )
 
-# TODO: save settings in Home folder ( ~ ), but in same directory as main .py file for Windows
 # TODO: create .deb package, create .desktop files there, do not forget about dependency including python3
 # TODO: distribute trough PPA
 
 # TODO: more tests after renaming
 
-# TODO: create Windows program version - delete unnecessary code to set icon
+# TODO: create Windows program version. Delete unnecessary code to set icon. Save settings, in same directory as main .py file.
 # TODO: complete functions, that controllers is disabled in interface (when track sound try not to be reseted by sounds this program created)
 
 """May be useful information:

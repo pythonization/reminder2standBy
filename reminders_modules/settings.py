@@ -21,6 +21,11 @@ from reminders_windows.settings_win import Ui_settingsWin
 
 PROGRAMM_NAME = 'rem_to_standby'
 PROGRAMM_RUN_PATH = 'python3 ' + os.path.join(sys.path[0], 'reminder2standBy.py')
+CONFIG_FILE_PATH = os.path.join(
+    os.path.expanduser("~"),
+    '.reminders_config'
+)
+# CONFIG_FILE_PATH = os.path.join(sys.path[0], 'reminders_config')
 
 
 class SettingEntry():
@@ -122,7 +127,6 @@ class SettingList():
 
 class SettingsManager(QtGui.QMainWindow):
     """Works with setting window"""
-    _config_file_path = os.path.join(sys.path[0], 'reminders_config')
     
     def __init__(self, tray, icon, parent=None):
         """tray - TrayController object
@@ -159,7 +163,7 @@ class SettingsManager(QtGui.QMainWindow):
         
         # reading settings configuration file
         parser = SafeConfigParser()
-        parser.read(self._config_file_path)
+        parser.read(CONFIG_FILE_PATH)
         try:
             self.current_configuration.import_from_parser(parser)
         except (NoSectionError, NoOptionError):
@@ -201,7 +205,7 @@ class SettingsManager(QtGui.QMainWindow):
         # writing settings to configuration file
         conf_writer = SafeConfigParser()
         self.current_configuration.export2parser(conf_writer)
-        with open(self._config_file_path, 'w') as configfile:
+        with open(CONFIG_FILE_PATH, 'w') as configfile:
             conf_writer.write(configfile)
         # saving autostart settings
         if self.ui.autostartCb.isChecked():
