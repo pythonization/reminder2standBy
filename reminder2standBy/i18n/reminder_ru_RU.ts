@@ -66,7 +66,7 @@ You can stop this message by saving configuration in settings window.</source>
     <message>
         <location filename="reminders_windows/settingsWin.ui" line="175"/>
         <source>Time reminder get bored</source>
-        <translation>Время когда программа напоминая заскучает</translation>
+        <translation>Время, когда программа напоминая заскучает</translation>
     </message>
     <message>
         <location filename="reminders_windows/settingsWin.ui" line="243"/>

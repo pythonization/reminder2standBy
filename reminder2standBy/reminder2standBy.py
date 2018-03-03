@@ -53,7 +53,7 @@ if __name__ == '__main__':
 # TODO: more tests after renaming
 
 # TODO: create Windows program version. Delete unnecessary code to set icon. Save settings, in same directory as main .py file.
-# TODO: complete functions, that controllers is disabled in interface (when track sound try not to be reseted by sounds this program created)
+# TODO: complete functions, that controllers is disabled in GUI (settings window) (when track sound try not to be reseted by sounds this program created)
 
 """May be useful information:
 

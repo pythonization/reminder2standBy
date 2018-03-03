@@ -1,0 +1,37 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: reminder2standBy
+Source: https://github.com/pythonization/reminder2standBy
+
+Files: *
+Copyright: 2018 Vitālijs Starostenkovs <starostenkovs2@inbox.lv>
+License: GPL-3.0
+
+Files: debian/*
+Copyright: 2018 Vitālijs Starostenkovs <starostenkovs2@inbox.lv>
+License: GPL-3.0
+
+Files: reminder2standBy/resources/*
+Copyright: 2018 Vitālijs Starostenkovs <starostenkovs2@inbox.lv>
+License: GPL-3.0
+Comment: See reminder2standBy/resources/sources_of_resources to find information, where icons and sounds were downloaded. Icons and sounds belongs to their owners, so better visit source page, to get actual information about copyright and license. Copyright of moonOnBlue256.png also described in reminder2standBy/resources/sources_of_resources file.
+
+License: GPL-3.0
+ This program is free software; you can redistribute it
+ and/or modify it under the terms of the GNU General Public
+ License as published by the Free Software Foundation;
+ version 3 of the License.
+ .
+ This program is distributed in the hope that it will be
+ useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ PURPOSE.  See the GNU General Public License for more
+ details.
+ .
+ You should have received a copy of the GNU General Public
+ License along with this package; if not, write to the Free
+ Software Foundation, Inc., 51 Franklin St, Fifth Floor,
+ Boston, MA  02110-1301 USA
+ .
+ On Debian systems, the full text of the GNU General Public
+ License version 3 can be found in the file
+ `/usr/share/common-licenses/GPL-3'.

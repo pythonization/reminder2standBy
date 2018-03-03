@@ -1,0 +1,4 @@
+reminder2standBy /usr/share/
+reminder2standBy.desktop /usr/share/applications/
+reminder2stand-by /usr/bin/
+reminder2stand-by.1.gz /usr/share/man/man1/
