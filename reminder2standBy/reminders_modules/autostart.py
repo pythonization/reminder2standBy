@@ -1,11 +1,12 @@
-"""Module for enable/disable program to start after system boot
+"""Module for enable/disable program to start after system boot.
+
 Code taken from Internet
 
 code from https://bpaste.net/show/2942fc93c4c5
 from user https://github.com/redstoneleo/Autostart-Autorun
 who improved code from https://29a.ch/2009/3/17/autostart-autorun-with-python
 """
- 
+
 import os
 import sys
 
@@ -82,6 +83,6 @@ else:
 #     finally:
 #         remove("test_xxx")
 #     assert not exists("test_xxx")
-# 
+#
 # if __name__ == "__main__":
 #     test()
