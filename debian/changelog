@@ -1,3 +1,9 @@
+reminder2stand-by (1.1) xenial; urgency=low
+
+  * Fix wrong dependency in debian/control file.
+
+ -- Vitālijs Starostenkovs <starostenkovs2@inbox.lv>  Sat, 10 Mar 2018 01:24:35 +0200
+
 reminder2stand-by (1.0) xenial; urgency=low
 
   * Initial release.
