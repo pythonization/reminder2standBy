@@ -6,6 +6,7 @@ Module analogs: audiere, PyMedia
 """
 
 import pyaudio
+# import prctl
 import wave
 import threading
 
@@ -37,17 +38,22 @@ class AsyncMusic(threading.Thread):
         You might want to call it using .start() function - then it will be
         called in separate thread
         """
+        # do not delete. thread name useful for searching bugs
+        self.name = 'playing_song_' + self._sound_path
+        # prctl.set_name('playing_song_' + self._sound_path)
+
         with wave.open(self._sound_path, 'rb') as sound_file:
             stream = pyaudio_obj.open(
                 format=pyaudio_obj.get_format_from_width(
-                    sound_file.getsampwidth()),
+                    sound_file.getsampwidth()
+                ),
                 channels=sound_file.getnchannels(),
                 rate=sound_file.getframerate(),
                 output=True
             )
 
             data = sound_file.readframes(CHUNK)
-            while data != '':
+            while len(data):
                 stream.write(data)
                 data = sound_file.readframes(CHUNK)
 

@@ -1,5 +1,6 @@
 """Module to work with timer and react on events."""
 
+# import prctl
 import threading
 import os
 import sys
@@ -45,6 +46,10 @@ class InfinityBeep(threading.Thread):
         You might want to call it using .start() function - then it will be
         called in separate thread
         """
+        # do not delete. thread name useful for searching bugs
+        self.name = 'infinity_beep_th'
+        # prctl.set_name('infinity_beep_th')
+
         self.stoprequest.clear()  # if stopped before, clear
         while not self.stoprequest.is_set():
             self._player.run()  # call and wait
@@ -146,11 +151,14 @@ class EventList():
 
 
 class MainTimer():
-    """Count time and react on user activity listeners when need"""
+    """Count time and react on user activity listeners when need."""
+
     delay_on = False
 
     def __init__(self, settings_manager, tray):
-        """settings_manager - SettingsManager object
+        """Create MainTimer object.
+
+        settings_manager - SettingsManager object
         tray - TrayController object
         """
         self.settings_manager = settings_manager
@@ -205,7 +213,8 @@ class MainTimer():
         self._work_timer.start(200)
 
     def set_work_delay(self, delay_min):
-        """Delays timer
+        """Delays timer.
+
         delay_min - minutes to delay timer
         """
         self._delay_ends = datetime.now() + timedelta(seconds=delay_min * 60)
@@ -214,8 +223,7 @@ class MainTimer():
 
     # timer
     def timer_event(self):
-        """Work that should be done on every QTimer timeout() event
-        """
+        """Work that should be done on every QTimer timeout() event."""
         if self.notification_flag.is_set():
             self.notification_flag.clear()
             self.reset_timer()
@@ -259,22 +267,25 @@ class MainTimer():
 
 #         Event listeners part
     def reset_timer(self):
-        """Reset timer if user do activity"""
+        """Reset timer if user do activity."""
         self._last_active = datetime.now()
         self._events.reset_fired()
 
     def thread_event_toggle(self, listener, config_param):
-        """Enable/disable activity listener
+        """Enable/disable activity listener.
+
         listener - listener object
-        config_param - name of configuration parameter"""
+        config_param - name of configuration parameter
+        """
         if self.settings_manager.current_configuration[config_param]:
             listener.should_notify.set()
         else:
             listener.should_notify.clear()
 
     def enable_needed_listeners(self):
-        """Check all activity listeners' preferences and Enable/disable
-        listeners
+        """Enable/disable listeners.
+
+        (Check all activity listeners' preferences, to decide enable or not.)
         """
         self.thread_event_toggle(self._keyboard, 'keyboard')
         self.thread_event_toggle(self._mouse, 'mouse')
