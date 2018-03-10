@@ -20,10 +20,12 @@ PROGRAMM_RESOURCE_PATH = os.path.join(sys.path[0], 'resources')
 
 def put_system_standby():
     """Put system into standby."""
-    os.system(
-        'dbus-send --system --print-reply --dest="org.freedesktop.UPower" '
-        '/org/freedesktop/UPower org.freedesktop.UPower.Suspend'
-    )
+    os.system('systemctl suspend')
+    # worked in 14.04
+    # os.system(
+    #     'dbus-send --system --print-reply --dest="org.freedesktop.UPower" '
+    #     '/org/freedesktop/UPower org.freedesktop.UPower.Suspend'
+    # )
 
 
 class InfinityBeep(threading.Thread):
