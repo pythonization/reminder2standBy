@@ -1,3 +1,9 @@
+reminder2stand-by (1.2) xenial; urgency=low
+
+  * Fix when playing sound. Fix to correctly enter standby.
+
+ -- Vitālijs Starostenkovs <starostenkovs2@inbox.lv>  Sun, 11 Mar 2018 00:20:10 +0200
+
 reminder2stand-by (1.1) xenial; urgency=low
 
   * Fix wrong dependency in debian/control file.
