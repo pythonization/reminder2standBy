@@ -7,6 +7,8 @@ import threading
 from pykeyboard import PyKeyboardEvent
 from pymouse import PyMouseEvent
 
+from .helpers import give_name2thread
+
 
 class CommonListener():
     """Common listeners functions."""
@@ -48,7 +50,21 @@ class KeyboardListener(PyKeyboardEvent, CommonListener):
 
         See PyUserInput documentation for parameter meaning.
         """
+        give_name2thread('keyboard_event_thread', self)
         self.notify_if_should()
+
+    def escape(self, event):
+        """Determine when to stop listening.
+
+        event - from this can get that key is pressed
+
+        Always return False, to never stop.
+        (I do not want to stop keyboard listener in my program.)
+        (The default behavior WAS to stop when the 'Esc' key is pressed.)
+        (Should not stop using this way, because then keyboard listening thread
+        will consume 100% of CPU thread.)
+        """
+        return False
 
 
 class MouseListener(PyMouseEvent, CommonListener):
@@ -72,6 +88,7 @@ class MouseListener(PyMouseEvent, CommonListener):
 
     def move(self, x, y):
         """Parent class PyMouseEvent call this method when user move mouse."""
+        give_name2thread('mouse_event_thread', self)
         self.notify_if_should()
 
     def scroll(self, x, y, vertical, horizontal):

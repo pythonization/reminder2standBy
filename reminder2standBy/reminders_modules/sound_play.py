@@ -6,9 +6,10 @@ Module analogs: audiere, PyMedia
 """
 
 import pyaudio
-# import prctl
 import wave
 import threading
+
+from .helpers import give_name2thread
 
 # TODO: try Muting error messages, that shows in console
 # but code from
@@ -38,9 +39,7 @@ class AsyncMusic(threading.Thread):
         You might want to call it using .start() function - then it will be
         called in separate thread
         """
-        # do not delete. thread name useful for searching bugs
-        self.name = 'playing_song_' + self._sound_path
-        # prctl.set_name('playing_song_' + self._sound_path)
+        give_name2thread('playing_song_' + self._sound_path, self)
 
         with wave.open(self._sound_path, 'rb') as sound_file:
             stream = pyaudio_obj.open(

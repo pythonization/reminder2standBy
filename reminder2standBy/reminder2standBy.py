@@ -11,7 +11,6 @@ or
 2) Source of file and file usage rules (for moonOnBlue256.png)
 """
 
-# import prctl
 import sys
 import threading
 import os
@@ -19,12 +18,11 @@ import os
 from PyQt4 import QtGui, QtCore
 
 # other programs module
+from reminders_modules.helpers import give_name2thread
 from reminders_modules.tray import TrayController
 
 if __name__ == '__main__':
-    # do not delete. thread name useful for searching bugs
-    threading.current_thread().name = 'main_reminder_thread'
-    # prctl.set_name('main_reminder_thread')
+    give_name2thread('main_reminder_thread', threading.current_thread())
 
     app = QtGui.QApplication(sys.argv)  # start GUI Application and give args
 

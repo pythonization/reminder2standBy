@@ -1,6 +1,5 @@
 """Module to work with timer and react on events."""
 
-# import prctl
 import threading
 import os
 import sys
@@ -11,6 +10,7 @@ from PyQt4 import QtCore
 from PyQt4.QtCore import QTimer
 
 # other programs modules
+from .helpers import give_name2thread
 from reminders_modules.listeners import KeyboardListener, MouseListener
 from reminders_modules.sound_play import AsyncMusic
 
@@ -48,9 +48,7 @@ class InfinityBeep(threading.Thread):
         You might want to call it using .start() function - then it will be
         called in separate thread
         """
-        # do not delete. thread name useful for searching bugs
-        self.name = 'infinity_beep_th'
-        # prctl.set_name('infinity_beep_th')
+        give_name2thread('infinity_beep_th', self)
 
         self.stoprequest.clear()  # if stopped before, clear
         while not self.stoprequest.is_set():
@@ -229,6 +227,9 @@ class MainTimer():
         if self.notification_flag.is_set():
             self.notification_flag.clear()
             self.reset_timer()
+
+        # same as main_reminder_thread
+        # give_name2thread('inside_timer_event', self)
 
         # should be after self.reset_timer()
         # because reset_timer has is own datetime.now()
