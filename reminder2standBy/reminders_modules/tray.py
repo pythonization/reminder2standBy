@@ -24,8 +24,10 @@ class TrayController():
     def set_menu(self, quit_callable, app_icon):
         """Show context menu and sets all its items.
 
-        quit_callable - function to call when user choose Exit menu item
-        app_icon - QIcon object - tray icon image
+        :param quit_callable: function to call when user choose Exit menu item
+        :type quit_callable: function
+        :param app_icon: QIcon object - tray icon image
+        :type app_icon: QIcon
         """
         tray_menu = QMenu()
 
@@ -81,8 +83,11 @@ class TrayController():
         )
 
         self._tray_ico.setContextMenu(tray_menu)
-        self._tray_ico.setToolTip(QtCore.QCoreApplication.translate(
-            'TrayController', 'Reminder to Stand By'))
+        self._tray_ico.setToolTip(
+            QtCore.QCoreApplication.translate(
+                'TrayController', 'Reminder to Stand By'
+            )
+        )
         self._tray_ico.setIcon(app_icon)
         self._tray_ico.show()
         self.setings_win = SettingsManager(self, app_icon)
@@ -90,9 +95,11 @@ class TrayController():
     def show_message(self, message):
         """Show message near tray icon.
 
-        message - message string
         (alternative to show message is via module
         from PyQt4.QtGui import QMessageBox)
+
+        :param message: message string
+        :type message: str
         """
         self._tray_ico.showMessage(
             QtCore.QCoreApplication.translate(
@@ -114,7 +121,8 @@ class TrayController():
             QtCore.QCoreApplication.translate('TrayController', 'Delay time')
             if delay_on else
             QtCore.QCoreApplication.translate(
-                'TrayController', 'Time not active')
+                'TrayController', 'Time not active'
+            )
         )
 
     def action_delay15(self):

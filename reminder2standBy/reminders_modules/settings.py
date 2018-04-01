@@ -38,12 +38,17 @@ class SettingEntry():
     def __init__(self, name, data_type, section, gui_widget, default_value):
         """Create SettingEntry.
 
-        name - setting name
-        data_type - timedelta or bool can be used
-        section - timings or track
-        gui_widget - Qt GUI widget object
-        default_value - value that will be user if error in *.ini file or file
-        does not exist
+        :param name: setting name
+        :type name: str
+        :param data_type: timedelta or bool can be used
+        :type data_type: str
+        :param section: timings or track
+        :type section: str
+        :param gui_widget: Qt GUI widget object
+        :type gui_widget: Qt GUI widget object
+        :param default_value: value that will be user if error in *.ini file or
+            if file does not exist
+        :type default_value: int, bool ...
         """
         self._name = name
         self.data_type = data_type
@@ -54,7 +59,8 @@ class SettingEntry():
     def set_value(self, value):
         """Change value for this setting.
 
-        value - new value
+        :param value: new value
+        :type value: int, bool ...
         """
         if self.data_type == 'timedelta':
             self.value = timedelta(seconds=value)
@@ -68,8 +74,9 @@ class SettingList():
     def __init__(self, *settings_elements):
         """Create SettingList.
 
-        *settings_elements - numerous tuple objects to initialize
-        numerous SettingEntry
+        :param *settings_elements: numerous tuple objects to initialize
+            numerous SettingEntry
+        :type *settings_elements: SettingEntry
         """
         self._settings_data = {}
         self._unique_sections = set()
@@ -83,14 +90,22 @@ class SettingList():
         Following is possible:
         x=SettingList()
         val=x['key']
+
+        :param key: SettingEntry name
+        :type key: str
+
+        :returns: value inside SettingEntry object
+        :rtype: timedelta, bool...
         """
         return self._settings_data[key].value
 
     def import_from_parser(self, parser):
         """Load data from *.ini file into program.
 
-        parser - SafeConfigParser object
         Note: load settings one by one, because part of file may be corrupted
+
+        :param parser: SafeConfigParser object
+        :type parser: SafeConfigParser
         """
         for entry in self._settings_data.values():
             if entry.data_type == 'timedelta':
@@ -127,7 +142,8 @@ class SettingList():
     def export2parser(self, parser):
         """Take data from program and save it into *.ini file.
 
-        parser - SafeConfigParser object
+        :param parser: SafeConfigParser object
+        :type parser: SafeConfigParser
         """
         for section in self._unique_sections:
             parser[section] = {}  # We should init every section
@@ -147,8 +163,10 @@ class SettingsManager(QtGui.QMainWindow):
     def __init__(self, tray, icon, parent=None):
         """Create SettingsManager.
 
-        tray - TrayController object
-        icon - QIcon object
+        :param tray: TrayController object
+        :type tray: TrayController
+        :param icon: QIcon object
+        :type icon: QIcon
         """
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_settingsWin()

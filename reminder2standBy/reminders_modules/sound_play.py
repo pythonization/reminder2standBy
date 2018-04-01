@@ -26,7 +26,8 @@ class AsyncMusic(threading.Thread):
     def __init__(self, sound_path):
         """Create AsyncMusic object.
 
-        sound_path - path string where .wav sound located
+        :param sound_path: path string where .wav sound located
+        :type sound_path: str
         """
         threading.Thread.__init__(self)
         self._sound_path = sound_path

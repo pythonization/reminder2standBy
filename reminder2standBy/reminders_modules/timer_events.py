@@ -34,7 +34,8 @@ class InfinityBeep(threading.Thread):
     def __init__(self, sound_path):
         """Create InfinityBeep.
 
-        sound_path - path where sound located
+        :param sound_path: path string where .wav sound located
+        :type sound_path: str
         """
         threading.Thread.__init__(self)
         self.stoprequest = threading.Event()
@@ -69,14 +70,22 @@ class EventEntry():
     ):
         """Create EventEntry.
 
-        current_configuration - SettingsManager object
-        tray - TrayController object
-        name - event name (same as in current_configuration object)
-        sound_path - if need to play sound, during event
-        notification_text - if need to show message to user, during event
-        function2do - function to execute during event
-        thread2start - object that starts some work in separate thread during
-        event
+        :param current_configuration: SettingList object
+        :type current_configuration: SettingList
+        :param tray: TrayController object
+        :type tray: TrayController
+        :param name: event name (same as in current_configuration object)
+        :type name: str
+        :param sound_path: path string where .wav sound located (if need to
+            play sound, during event)
+        :type sound_path: str
+        :param notification_text: if need to show message to user, during event
+        :type notification_text: str
+        :param function2do: function to execute during event
+        :type function2do: function
+        :param thread2start: object that starts some work in separate thread
+            during event
+        :type thread2start: threading.Thread
         """
         self.current_configuration = current_configuration
         self.tray = tray
@@ -90,7 +99,9 @@ class EventEntry():
         """Fire event.
 
         Do its job if not fired before and time elapsed to fire event.
-        time_passed - current elapsed time
+
+        :param time_passed: current elapsed time
+        :type time_passed: timedelta
         """
         if (
             (not self._fired) and
@@ -127,7 +138,8 @@ class EventList():
     def __init__(self, *events):
         """Create EventList.
 
-        *events - numerous of EventEntry objects
+        :param *events: numerous of EventEntry objects
+        :type *events: EventEntry
         """
         self._events = []
         for event in events:
@@ -136,7 +148,8 @@ class EventList():
     def event_reaction(self, time_passed):
         """Try to fire every event if they need to fire.
 
-        time_passed - currently elapsed time
+        :param time_passed: current elapsed time
+        :type time_passed: timedelta
         """
         for event in self._events:
             event.event_reaction(time_passed)
@@ -158,8 +171,10 @@ class MainTimer():
     def __init__(self, settings_manager, tray):
         """Create MainTimer object.
 
-        settings_manager - SettingsManager object
-        tray - TrayController object
+        :param settings_manager: SettingsManager object
+        :type settings_manager: SettingsManager
+        :param tray: TrayController object
+        :type tray: TrayController
         """
         self.settings_manager = settings_manager
         self.tray = tray
@@ -215,7 +230,8 @@ class MainTimer():
     def set_work_delay(self, delay_min):
         """Delays timer.
 
-        delay_min - minutes to delay timer
+        :param delay_min: minutes to delay timer
+        :type delay_min: int, float
         """
         self._delay_ends = datetime.now() + timedelta(seconds=delay_min * 60)
         self.delay_on = True
@@ -277,8 +293,10 @@ class MainTimer():
     def thread_event_toggle(self, listener, config_param):
         """Enable/disable activity listener.
 
-        listener - listener object
-        config_param - name of configuration parameter
+        :param listener: listener object
+        :type listener: CommonListener
+        :param config_param: name of configuration parameter
+        :type config_param: str
         """
         if self.settings_manager.current_configuration[config_param]:
             listener.should_notify.set()

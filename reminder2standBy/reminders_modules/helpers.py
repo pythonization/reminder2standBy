@@ -17,8 +17,10 @@ def give_name2thread(name, thread_obj):
     Do not delete calls of this function. Thread name useful for searching
     bugs.
 
-    name - thread name
-    thread_obj - pass thread object to legacy python function
+    :param name: thread name
+    :type name: str
+    :param thread_obj: pass thread object to legacy python function
+    :type thread_obj: Thread
     """
     thread_obj.name = name
     if prctl:

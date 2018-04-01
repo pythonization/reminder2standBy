@@ -16,9 +16,9 @@ class CommonListener():
     def __init__(self, object2notify):
         """Create CommonListener.
 
-        object2notify - object with property "notification_flag"
-        property type is threading.Event()
-        property is set when event ocurred
+        :param object2notify: object with property "notification_flag"
+            property type is threading.Event()
+            property is set when event ocurred
         """
         self._object2notify = object2notify
         self.should_notify = threading.Event()
@@ -39,7 +39,8 @@ class KeyboardListener(PyKeyboardEvent, CommonListener):
     def __init__(self, object2notify):
         """Create KeyboardListener.
 
-        object2notify - MainTimer object
+        :param object2notify: MainTimer object
+        :type object2notify: MainTimer
         """
         CommonListener.__init__(self, object2notify)
         PyKeyboardEvent.__init__(self)
@@ -63,6 +64,9 @@ class KeyboardListener(PyKeyboardEvent, CommonListener):
         (The default behavior WAS to stop when the 'Esc' key is pressed.)
         (Should not stop using this way, because then keyboard listening thread
         will consume 100% of CPU thread.)
+
+        :returns: False
+        :rtype: bool
         """
         return False
 
@@ -73,7 +77,8 @@ class MouseListener(PyMouseEvent, CommonListener):
     def __init__(self, object2notify):
         """Create MouseListener.
 
-        object2notify - MainTimer object
+        :param object2notify: MainTimer object
+        :type object2notify: MainTimer
         """
         CommonListener.__init__(self, object2notify)
         PyMouseEvent.__init__(self)
