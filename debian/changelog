@@ -1,4 +1,4 @@
-reminder2stand-by (1.3ubuntu1) UNRELEASED; urgency=medium
+reminder2stand-by (1.4) xenial; urgency=low
 
   * Translations fixed. Some code moved to common_qt_app folder.
 
