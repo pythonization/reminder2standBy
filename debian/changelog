@@ -1,3 +1,9 @@
+reminder2stand-by (1.3ubuntu1) UNRELEASED; urgency=medium
+
+  * Translations fixed. Some code moved to common_qt_app folder.
+
+ -- Vitālijs Starostenkovs <starostenkovs2@inbox.lv>  Sat, 12 May 2018 15:05:01 +0300
+
 reminder2stand-by (1.3) xenial; urgency=low
 
   * After ESC button pressed reminder2stand no longer stop keyboard listener and keyboard listener will not consume 100% of CPU thread. Program threads now are named if python-prctl library installed. This feature can be used for debugging to determine how many CPU time consume each thread.
