@@ -9,7 +9,7 @@ import pyaudio
 import wave
 import threading
 
-from .helpers import give_name2thread
+from common_qt_app.helpers import give_name2thread
 
 # TODO: try Muting error messages, that shows in console
 # but code from

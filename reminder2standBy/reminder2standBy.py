@@ -18,7 +18,7 @@ import os
 from PyQt4 import QtGui, QtCore
 
 # other programs module
-from reminders_modules.helpers import give_name2thread
+from common_qt_app.helpers import give_name2thread
 from reminders_modules.tray import TrayController
 
 if __name__ == '__main__':

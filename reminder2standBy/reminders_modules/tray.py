@@ -11,6 +11,9 @@ from reminders_modules.settings import SettingsManager
 
 PROGRAMM_RESOURCE_PATH = os.path.join(sys.path[0], 'resources')
 
+# Do not call ".translate(" on this. Names are not translatable.
+PROGRAM_NAME = 'Reminder to Stand By'
+
 
 class TrayController():
     """Display and control context menu."""
@@ -22,7 +25,7 @@ class TrayController():
         self._tray_ico = QSystemTrayIcon()
 
     def set_menu(self, quit_callable, app_icon):
-        """Show context menu and sets all its items.
+        """Show tray icon and sets its context menu items.
 
         :param quit_callable: function to call when user choose Exit menu item
         :type quit_callable: function
@@ -83,11 +86,7 @@ class TrayController():
         )
 
         self._tray_ico.setContextMenu(tray_menu)
-        self._tray_ico.setToolTip(
-            QtCore.QCoreApplication.translate(
-                'TrayController', 'Reminder to Stand By'
-            )
-        )
+        self._tray_ico.setToolTip(PROGRAM_NAME)
         self._tray_ico.setIcon(app_icon)
         self._tray_ico.show()
         self.setings_win = SettingsManager(self, app_icon)
@@ -102,9 +101,7 @@ class TrayController():
         :type message: str
         """
         self._tray_ico.showMessage(
-            QtCore.QCoreApplication.translate(
-                'TrayController', 'Reminder to Stand By'),
-            message,
+            PROGRAM_NAME, message,
             msecs=5000
         )
 

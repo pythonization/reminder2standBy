@@ -10,7 +10,7 @@ from PyQt4 import QtCore
 from PyQt4.QtCore import QTimer
 
 # other programs modules
-from .helpers import give_name2thread
+from common_qt_app.helpers import give_name2thread
 from reminders_modules.listeners import KeyboardListener, MouseListener
 from reminders_modules.sound_play import AsyncMusic
 

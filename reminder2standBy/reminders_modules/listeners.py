@@ -7,7 +7,7 @@ import threading
 from pykeyboard import PyKeyboardEvent
 from pymouse import PyMouseEvent
 
-from .helpers import give_name2thread
+from common_qt_app.helpers import give_name2thread
 
 
 class CommonListener():

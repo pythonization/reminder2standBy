@@ -1,4 +1,4 @@
-"""Different helper functions."""
+"""Various helper functions."""
 
 try:
     import prctl
